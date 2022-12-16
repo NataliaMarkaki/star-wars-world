@@ -4,24 +4,24 @@ import { getPeopleList, PersonRequestResult } from '../services/people/people';
 
 import Card from '../components/Card/Card';
 
-import { Header, SectionList, Text } from './App.styles';
+import { Header, SectionList, Text } from './Home.styles';
 
-function App() {
+function Home() {
   const [people, setPeople] = useState<PersonRequestResult[]>([]);
 
   useEffect(() => {
     (async function () {
-      const data = await getPeopleList();  
+      const data = await getPeopleList();
       setPeople(data);
     })();
 
   }, [setPeople]);
 
   if (!people.length) {
-  return <>
-    <Header> <h1> Star Wars People Directory </h1></Header>
-    <Text>Loading...</Text>
-  </>
+    return <>
+      <Header> <h1> Star Wars People Directory </h1></Header>
+      <Text>Loading...</Text>
+    </>
   }
 
   return (
@@ -34,4 +34,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;

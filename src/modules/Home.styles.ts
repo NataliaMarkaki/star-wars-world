@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { colours } from "./../constants.styles";
+import { colours } from "../constants.styles";
 
 export const Header = styled.header`
   margin: 0 2rem;
