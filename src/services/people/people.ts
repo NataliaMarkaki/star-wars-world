@@ -1,4 +1,5 @@
 import { SWAPI_URL } from "../constants";
+import { getPlanet } from "../planets/planets";
 
 export interface GetPersonRequestParams {
   url: string;
@@ -48,3 +49,16 @@ export async function getPerson({ url }: GetPersonRequestParams): Promise<Person
     return {};
   }
 };
+
+export async function getPeopleList() {
+  const people = await getPeople();
+  const peopleWithWorld = await Promise.all(people.results.map(async (person: PersonRequestResult) => {
+    const planet = await getPlanet({ url: person.homeworld as string });
+    return {
+      ...person,
+      homeworld: planet.name,
+    }
+  }));
+
+  return peopleWithWorld;
+}
