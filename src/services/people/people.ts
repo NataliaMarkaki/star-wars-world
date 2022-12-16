@@ -16,9 +16,9 @@ export interface PersonRequestResult {
   url?: string;
 }
 
-interface GetPeopleRequestResult {
+export interface GetPeopleRequestResult {
   count: number;
-  people: PersonRequestResult[];
+  results: PersonRequestResult[];
   next?: string;
 };
 
@@ -33,7 +33,7 @@ export async function getPeople(): Promise<GetPeopleRequestResult> {
     console.warn(`Error: ${e}`);
     return {
       count: 0,
-      people: [],
+      results: [],
     };
   }
 };
@@ -48,4 +48,3 @@ export async function getPerson({ url }: GetPersonRequestParams): Promise<Person
     return {};
   }
 };
-
