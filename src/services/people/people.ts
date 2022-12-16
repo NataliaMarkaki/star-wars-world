@@ -1,7 +1,7 @@
 import { SWAPI_URL } from "../constants";
 
 export interface GetPersonRequestParams {
-  personNumber: number;
+  url: string;
 }
 
 export interface PersonRequestResult {
@@ -38,10 +38,8 @@ export async function getPeople(): Promise<GetPeopleRequestResult> {
   }
 };
 
-export async function getPerson({ personNumber }: GetPersonRequestParams): Promise<PersonRequestResult> {
+export async function getPerson({ url }: GetPersonRequestParams): Promise<PersonRequestResult> {
   try {
-    const url = `${SWAPI_URL}/people/${personNumber}`;
-
     const data = await fetch(url);
     const result = await data.json();
     return result;
