@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-const LazyHomeComponent = React.lazy(() => import('./modules/Home'));
+const LazyHomeComponent = React.lazy(() => import('./modules/Home/Home'));
 
 const AppRoutes = () => {
   return (

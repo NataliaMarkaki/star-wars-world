@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
-import { getPeopleList, PersonRequestResult } from '../services/people/people';
+import { getPeopleList, PersonRequestResult } from '../../services/people/people';
 
-import Card from '../components/Card/Card';
+import Card from '../../components/Card/Card';
 
 import { Header, SectionList, Text } from './Home.styles';
 
