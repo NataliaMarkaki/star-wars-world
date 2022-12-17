@@ -19,7 +19,7 @@ const successResponse = {
 
 const errorResponse = {
   count: 0,
-  people: [],
+  results: [],
 };
 
 const warnMock = jest.fn();

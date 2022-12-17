@@ -2,13 +2,15 @@ import { cleanup, render, screen } from "@testing-library/react";
 
 import Card from "./Card";
 
+jest.mock('react-router-dom');
+
 describe("Card", () => {
   afterEach(cleanup);
 
   it("renders a card component with all data shown correctly", () => {
     render(
       <Card
-        name="fakeName" gender="fakeGender" planet="fakePlanet" id={123}
+        name="fakeName" gender="fakeGender" id={123}
       />
     );
 

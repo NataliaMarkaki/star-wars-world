@@ -28,7 +28,7 @@ function Home() {
     <>
       <Header> <h1> Star Wars People Directory </h1></Header>
       <SectionList>
-        {people.map((person, key) => <Card name={person.name} gender={person.gender} id={key} key={key} planet={person.homeworld} />)}
+        {people.map((person, key) => <Card id={key} key={key} {...person} />)}
       </SectionList>
     </>
   );
