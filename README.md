@@ -34,7 +34,7 @@ You will also see a constants.styles.js file that for now hosts all theme relate
 
 If we want to consider how this project will scale structure wise, most of the current styled components would be extracted in a toolkit/ui library to promote reusability even further under an atomic design.
 
-I'm currently passing the state for the character page through the react router state, which is ot something I would recommend on a production app. It was only done because of the time constraints and I'd expect to have set up better state management in a scalable app (like redux, redux toolkit or even context).
+I'm currently passing the state for the character page through the react router state, which is not something I would recommend on a production app. It was only done because of the time constraints and I'd expect to have set up better state management in a scalable app (like redux, redux toolkit or even context). For deep-linking into the page, I would like the id of the character to be part of the url so we can make a request upon landing to the page for all the character's data.
 
 Some of the tests aren't as extensive as I'd like but given the time limit I thought, better have something than nothing at all.
 I would also like to have some cypress tests set up for e2e testing if I was looking to make it scale better.
